@@ -1,0 +1,13 @@
+on:
+  schedule:
+    # * is a special character in YAML so you have to quote this string
+    - cron:  '*/15 * * * *'
+
+jobs:
+  ping_glitch:
+    name: Scheduled message
+    runs-on: ubuntu-latest
+    steps:
+      - name: send message
+        run: |
+          curl -H "Content-Type: application/json" -X POST -d "{\"content\": \"Urrarr\"}" https://discord.com/api/webhooks/829249067112464425/87ONsvB31awyDYY6SOFFn3_2uSWeslOvfJCkC2IljvstgsgglWhle_Q14ZN5W8fxOYVK
