@@ -1,7 +1,7 @@
 on:
   schedule:
     # * is a special character in YAML so you have to quote this string
-    - cron:  '*/15 * * * *'
+    - cron:  '15 14 7 4 *'
 
 jobs:
   ping_glitch:
@@ -13,4 +13,4 @@ jobs:
           date +"%T"
       - name: send message
         run: |
-          curl -H "Content-Type: application/json" -X POST -d "{\"content\": \"Urrarr\"}" https://discord.com/api/webhooks/829249067112464425/87ONsvB31awyDYY6SOFFn3_2uSWeslOvfJCkC2IljvstgsgglWhle_Q14ZN5W8fxOYVK
+          curl -H "Content-Type: application/json" -X POST -d "{\"content\": \"New message!!!\"}" https://discord.com/api/webhooks/${{ secrets.DISCORD_ID }}/${{ secrets.DISCORD_TOKEN }}
